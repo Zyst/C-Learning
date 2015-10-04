@@ -26,11 +26,6 @@ namespace Hello
             InitializeComponent();
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void submitClick(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Hello " + userName.Text);
