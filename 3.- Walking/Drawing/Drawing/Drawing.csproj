@@ -59,6 +59,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Circle.cs" />
+    <Compile Include="DrawingShape.cs" />
     <Compile Include="Square.cs" />
   </ItemGroup>
   <ItemGroup>

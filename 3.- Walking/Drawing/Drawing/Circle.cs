@@ -9,51 +9,23 @@ using System.Windows.Controls;
 
 namespace Drawing
 {
-    class Circle : IDraw, IColor
+    class Circle : DrawingShape, IDraw, IColor
     {
-        private int diameter;
-        private int locX = 0, locY = 0;
-        private Ellipse circle = null;
-
-        public Circle(int diameter)
+        public Circle(int diameter) : base(diameter)
         {
-            this.diameter = diameter;
         }
 
-        void IDraw.SetLocation(int xCoord, int yCoord)
+        public override void Draw(Canvas canvas)
         {
-            this.locX = xCoord;
-            this.locY = yCoord;
-        }
-
-        void IDraw.Draw(Canvas canvas)
-        {
-            if (this.circle != null)
+            if (this.shape != null)
             {
-                canvas.Children.Remove(this.circle);
+                canvas.Children.Remove(this.shape);
             }
             else
             {
-                this.circle = new Ellipse();
+                this.shape = new Ellipse();
             }
-
-            this.circle.Height = this.diameter;
-            this.circle.Width  = this.diameter;
-
-            Canvas.SetTop(this.circle, this.locY);
-            Canvas.SetLeft(this.circle, this.locX);
-
-            canvas.Children.Add(this.circle);
-        }
-
-        void IColor.SetColor(Color color)
-        {
-            if (this.circle != null)
-            {
-                SolidColorBrush brush = new SolidColorBrush(color);
-
-                this.circle.Fill = brush;
-            }
+            base.Draw(canvas);
         }
     }
 }
