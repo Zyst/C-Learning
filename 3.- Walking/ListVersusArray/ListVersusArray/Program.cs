@@ -30,7 +30,7 @@ namespace ListVersusArray
             Stopwatch stopWatch = new Stopwatch();
 
             List<int> list = new List<int>();
-            int[] array    = new int[goal];
+            int[] array = new int[goal];
 
             stopWatch.Start();
             for (int i = 0; i < goal; i++) // Fill up the List in a slow way.
