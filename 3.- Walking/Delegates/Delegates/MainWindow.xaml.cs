@@ -38,6 +38,8 @@ namespace Delegates
             this.shipper            = new Shipper();
             this.checkoutController = new CheckoutController();
 
+            this.shipper.ShipProcessingComplete        += this.displayMessage;
+            this.auditor.AuditingProcessComplete       += this.displayMessage;
             this.checkoutController.CheckoutProcessing += this.auditor.AuditOrder;
             this.checkoutController.CheckoutProcessing += this.shipper.ShipOrder;
         }
@@ -112,7 +114,8 @@ namespace Delegates
                 this.checkoutController.StartCheckoutProcessing(this.order); // Our delegate
 
                 // Display a summary of the order
-                MessageBox.Show(String.Format("Order {0}, value {1:C}", order.OrderID, order.TotalValue), "Order Placed");
+                // MessageBox.Show(String.Format("Order {0}, value {1:C}", order.OrderID, order.TotalValue), "Order Placed");
+                // Trying showing messages with events
                 
                 // Clear out the order details so the user can start again with a new order
                 this.order = new Order { Date = DateTime.Now, Items = new List<OrderItem>(), OrderID = Guid.NewGuid(), TotalValue = 0 };
@@ -125,6 +128,11 @@ namespace Delegates
             {
                 MessageBox.Show(ex.Message, "Exception");
             }
+        }
+
+        private void displayMessage(string message)
+        {
+            this.messageBar.Text += message + "\n";
         }
     }
 }

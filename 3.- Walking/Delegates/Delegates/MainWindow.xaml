@@ -14,7 +14,7 @@
             <RowDefinition Height="2*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="18*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"  FontSize="24"  TextWrapping="Wrap" Text="Wide World Importers" />
         <Grid Grid.Row="3">
@@ -99,5 +99,8 @@
                 <Button x:Name="checkout" Grid.Row="4" IsEnabled="False" Content="Checkout" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Click="CheckoutButtonClicked" />
             </Grid>
         </Grid>
+        <ScrollViewer Grid.Row="4" VerticalScrollBarVisibility="Visible">
+            <TextBlock x:Name="messageBar" FontSize="14" />
+        </ScrollViewer>
     </Grid>
 </Window>

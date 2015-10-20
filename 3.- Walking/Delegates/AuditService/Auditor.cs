@@ -12,6 +12,9 @@ namespace AuditService
 {
     public class Auditor
     {
+        public delegate void AuditingCompleteDelegate(string message);
+        public event AuditingCompleteDelegate AuditingProcessComplete;
+
         public void AuditOrder(Order order)
         {
             this.doAuditing(order);
@@ -56,6 +59,13 @@ namespace AuditService
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message, "Exception");
+                }
+                finally
+                {
+                    if (this.AuditingProcessComplete != null)
+                    {
+                        this.AuditingProcessComplete(String.Format("Audit record written for Order {0}", order.OrderID));
+                    }
                 }
             }
         }
