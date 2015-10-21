@@ -10,7 +10,7 @@ The programs inside this folder are meant to test parallelism and its impact in 
 
 ![First test](/4-Running/Parallelism/1-First-Test-result-before-Tasks.png)
 
-<center>*Test before Parallelism*</center>
+ *Test before Parallelism* 
 
 Application ran in 4291 ms, although the range observed was around 200 +- that.
 
@@ -22,7 +22,7 @@ The processor was relatively untouched even while processing the graph.
 
 ![Second Test](/4-Running/Parallelism/2-Second-test-with-two-tasks.jpg)
 
-<center>*Test with two tasks*</center>
+ *Test with two tasks* 
 
 Application ran in 2970 ms, not a very marked improvement. Variance range observed was +- 200.
 
@@ -36,7 +36,7 @@ Method for calling was divided in two manually asigned parallelism tasks.
 
 ![Third Test](/4-Running/Parallelism/3-Third-Test-with-four-tasks.png)
 
-<center>*Test with four tasks*</center>
+ *Test with four tasks* 
 
 Application ran in 1816 ms, with +- 100 ms variance observed.
 
@@ -50,7 +50,7 @@ Application speed at this point is more than double of the non-pararellized vers
 
 ![Fourth Test](/4-Running/Parallelism/4-Fourth-test-with-for-loop-task.jpg)
 
-<center>*Test with Parallel For Loop*</center>
+ *Test with Parallel For Loop* 
 
 Application ran in 892 ms, with +- 40 ms variance observed.
 
@@ -64,7 +64,7 @@ Processor spikes to near 100% usage when this application generates a graph.
 
 ![Fifth Test](/4-Running/Parallelism/5-Fifth-test-a-canceled-graph.jpg)
 
-<center>*Not really part of the tests*</center>
+ *Not really part of the tests* 
 
 Added method to cancel parallel processing. Variance in color ocurrs because a new graph has been partially generated when the cancel is triggered. 
 
