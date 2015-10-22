@@ -1,4 +1,4 @@
-#Parallelism
+#Parallelism GraphDemo tests
 
 The programs inside this folder are meant to test parallelism and its impact in program performance.
 
